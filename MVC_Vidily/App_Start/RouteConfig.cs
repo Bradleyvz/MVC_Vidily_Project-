@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Web.UI.WebControls;
 
 namespace MVC_Vidily
 {
@@ -12,6 +13,14 @@ namespace MVC_Vidily
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+
+            //Custom Movies Route 
+            routes.MapRoute(
+                "MoviesByReleaseDate",
+                "movies/released/{year}/{month}",
+                new { Controller = "Movies", action = "ByReleaseDate" },
+                new { year = @"\d{4}" ,month =@"\{2}" });
 
             routes.MapRoute(
                 name: "Default",

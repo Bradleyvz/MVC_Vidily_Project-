@@ -2,9 +2,11 @@
 //Added in the using models using statement.
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure.MappingViews;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 namespace MVC_Vidily.Controllers
 {
@@ -32,6 +34,12 @@ namespace MVC_Vidily.Controllers
 
                     return Content(String.Format("pageIndex={0}&sortBy={1}", pageIndex, sortBy));
 
+        }
+        //Controller Action for the Custom Route in Route.Config File 
+        public ActionResult ByReleaseDate(int year,int month )
+        {
+
+            return Content(year +"/"+month);
         }
 
     }
