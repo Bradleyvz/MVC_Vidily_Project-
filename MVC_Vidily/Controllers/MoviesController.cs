@@ -13,8 +13,8 @@ namespace MVC_Vidily.Controllers
         // GET: Movies
         public ActionResult Random()
         {
-            var movie=new Movie() { }
-            return View();
+            var movie = new Movie() { Name = "Sherk" };
+            return View(movie);
         }
     }
 }
