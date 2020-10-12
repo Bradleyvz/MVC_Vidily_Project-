@@ -36,6 +36,8 @@ namespace MVC_Vidily.Controllers
 
         }
         //Controller Action for the Custom Route in Route.Config File 
+        //Adding the Atrribute Routing in the Controller.
+        [Route("movies.released/{year}/{month:regex(\\d{4}):range(1,12)}")]
         public ActionResult ByReleaseDate(int year,int month )
         {
 

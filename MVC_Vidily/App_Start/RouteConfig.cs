@@ -14,14 +14,10 @@ namespace MVC_Vidily
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-
+            //Enable MVC Attribute Routes 
+            routes.MapMvcAttributeRoutes();
             //Custom Movies Route 
-            routes.MapRoute(
-                "MoviesByReleaseDate",
-                "movies/released/{year}/{month}",
-                new { Controller = "Movies", action = "ByReleaseDate" },
-                new { year = @"\d{4}" ,month =@"\{2}" });
-
+           
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
