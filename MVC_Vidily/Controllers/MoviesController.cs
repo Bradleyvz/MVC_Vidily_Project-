@@ -1,4 +1,5 @@
 ﻿using MVC_Vidily.Models;
+using MVC_Vidily.ViewModel;
 //Added in the using models using statement.
 using System;
 using System.Collections.Generic;
@@ -12,12 +13,27 @@ namespace MVC_Vidily.Controllers
 {
     public class MoviesController : Controller
     {
-        // GET: Movies
+        // GET: Movies/Random
+        //Create a List Of Customers
         public ActionResult Random()
         {
+
             var movie = new Movie() { Name = "Sherk" };
-            return View(movie);
+            var customers = new List<Customer>
+            {
+                new Customer{Name="Customer1"},
+                new Customer{Name="Customer2"}
+
+            };
+            var viewModel = new RandomViewModel
+            {
+                Movie = movie,
+                Customers=customers
+            };
+
+            return View(viewModel);
         }
+    
         public ActionResult Edit(int id)
         {
             return Content("id=" + id);
