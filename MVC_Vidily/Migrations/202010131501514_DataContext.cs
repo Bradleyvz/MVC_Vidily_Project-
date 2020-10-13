@@ -3,7 +3,7 @@ namespace MVC_Vidily.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initial_model : DbMigration
+    public partial class DataContext : DbMigration
     {
         public override void Up()
         {

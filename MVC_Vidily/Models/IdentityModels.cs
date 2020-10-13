@@ -18,17 +18,18 @@ namespace MVC_Vidily.Models
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class  DataContext: IdentityDbContext<ApplicationUser>
     {
-     
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Movie> movies { get; set; }
+        public DataContext()
+            : base("VidilyConnection", throwIfV1Schema: false)
         {
         }
 
-        public static ApplicationDbContext Create()
+        public static DataContext Create()
         {
-            return new ApplicationDbContext();
+            return new DataContext();
         }
     }
 }
