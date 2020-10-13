@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Principal;
 using System.Web;
 
 namespace MVC_Vidily.Models
@@ -11,5 +12,11 @@ namespace MVC_Vidily.Models
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
+        public bool IsSubscribedToNewsletter { get; set; }
+        
+        //Navigation Prperty Allow you to load objects together 
+        //Need MembershipType MembershipType and MembershipTypeId to create foreign key in database 
+        public MembershipType MembershipType { get; set; }
+        public byte MembershipTypeID { get; set; }
     }
 }
