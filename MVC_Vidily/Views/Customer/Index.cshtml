@@ -26,7 +26,7 @@ else
                 <tr>
                     <td>@Html.ActionLink(customer.Name, "Details", "Customer", new { id = customer.Id }, null)</td>
                     <!--Added The MembershipType Column to the View -->
-                    <td>@customer.MembershipType.DiscountRate%</td>
+                    <td>@customer.MembershipType.MembershipTypeName</td>
                 </tr>
             }
         </tbody>
