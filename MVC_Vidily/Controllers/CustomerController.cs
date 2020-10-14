@@ -5,6 +5,8 @@ using System.EnterpriseServices;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+//Add Using Statement 
+using System.Data.Entity;
 
 namespace MVC_Vidily.Controllers
 {
@@ -23,7 +25,9 @@ namespace MVC_Vidily.Controllers
         // GET: Customers
         public ViewResult Index()
         {
-            var customers = _context.Customers.ToList();
+            //Eager Loading/ Using the Include Method to load the whole customer object
+            //Added Using System.Data.Entity MembershipType is in a different NameSpace 
+            var customers = _context.Customers.Include(c =>c.MembershipType).ToList();
 
             return View(customers);
         }
