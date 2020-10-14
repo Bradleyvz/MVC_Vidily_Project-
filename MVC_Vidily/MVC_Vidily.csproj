@@ -185,6 +185,10 @@
     <Compile Include="Migrations\202010141422570_PopulateMembershipTypeName.designer.cs">
       <DependentUpon>202010141422570_PopulateMembershipTypeName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010141455419_AddMovieProperties.cs" />
+    <Compile Include="Migrations\202010141455419_AddMovieProperties.designer.cs">
+      <DependentUpon>202010141455419_AddMovieProperties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -287,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010141422570_PopulateMembershipTypeName.resx">
       <DependentUpon>202010141422570_PopulateMembershipTypeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010141455419_AddMovieProperties.resx">
+      <DependentUpon>202010141455419_AddMovieProperties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -17,16 +17,14 @@ namespace MVC_Vidily.Models
             return userIdentity;
         }
     }
-
     public class  DataContext: IdentityDbContext<ApplicationUser>
     {
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<Movie> movies { get; set; }
+        public DbSet<Movie> Movies { get; set; }
         public DataContext()
             : base("VidilyConnection", throwIfV1Schema: false)
         {
         }
-
         public static DataContext Create()
         {
             return new DataContext();
