@@ -13,7 +13,7 @@ namespace MVC_Vidily.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202010141138332_PopulateMembershipTypeName"; }
+            get { return "202010141422570_PopulateMembershipTypeName"; }
         }
         
         string IMigrationMetadata.Source

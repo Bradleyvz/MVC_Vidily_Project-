@@ -173,13 +173,17 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
-    <Compile Include="Migrations\202010141123264_test.cs" />
-    <Compile Include="Migrations\202010141123264_test.designer.cs">
-      <DependentUpon>202010141123264_test.cs</DependentUpon>
+    <Compile Include="Migrations\202010141257385_RecreateDb.cs" />
+    <Compile Include="Migrations\202010141257385_RecreateDb.designer.cs">
+      <DependentUpon>202010141257385_RecreateDb.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202010141138332_PopulateMembershipTypeName.cs" />
-    <Compile Include="Migrations\202010141138332_PopulateMembershipTypeName.designer.cs">
-      <DependentUpon>202010141138332_PopulateMembershipTypeName.cs</DependentUpon>
+    <Compile Include="Migrations\202010141420471_PopulateMembershipType.cs" />
+    <Compile Include="Migrations\202010141420471_PopulateMembershipType.designer.cs">
+      <DependentUpon>202010141420471_PopulateMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010141422570_PopulateMembershipTypeName.cs" />
+    <Compile Include="Migrations\202010141422570_PopulateMembershipTypeName.designer.cs">
+      <DependentUpon>202010141422570_PopulateMembershipTypeName.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -275,11 +279,14 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202010141123264_test.resx">
-      <DependentUpon>202010141123264_test.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202010141257385_RecreateDb.resx">
+      <DependentUpon>202010141257385_RecreateDb.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010141138332_PopulateMembershipTypeName.resx">
-      <DependentUpon>202010141138332_PopulateMembershipTypeName.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202010141420471_PopulateMembershipType.resx">
+      <DependentUpon>202010141420471_PopulateMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010141422570_PopulateMembershipTypeName.resx">
+      <DependentUpon>202010141422570_PopulateMembershipTypeName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

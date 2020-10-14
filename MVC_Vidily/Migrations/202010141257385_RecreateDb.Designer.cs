@@ -7,13 +7,13 @@ namespace MVC_Vidily.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class test : IMigrationMetadata
+    public sealed partial class RecreateDb : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(test));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(RecreateDb));
         
         string IMigrationMetadata.Id
         {
-            get { return "202010141123264_test"; }
+            get { return "202010141257385_RecreateDb"; }
         }
         
         string IMigrationMetadata.Source
