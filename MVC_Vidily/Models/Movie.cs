@@ -19,10 +19,13 @@ namespace MVC_Vidily.Models
         [StringLength(255)]
         public string Name { get; set; }
 
-        //[Required]
+        
         [Display(Name="Genre")]
    
         public Genre Genre { get; set; }//Navigation Property to Movies to Genre Table 
+
+
+        [Required]
         public byte GenreId { get; set; }//Foreign Key
 
 

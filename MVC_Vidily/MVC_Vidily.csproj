@@ -201,6 +201,10 @@
     <Compile Include="Migrations\202010182032031_RemoveGenreRequiredNotation.designer.cs">
       <DependentUpon>202010182032031_RemoveGenreRequiredNotation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010182043388_RequiredOnGenreId.cs" />
+    <Compile Include="Migrations\202010182043388_RequiredOnGenreId.designer.cs">
+      <DependentUpon>202010182043388_RequiredOnGenreId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -320,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010182032031_RemoveGenreRequiredNotation.resx">
       <DependentUpon>202010182032031_RemoveGenreRequiredNotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010182043388_RequiredOnGenreId.resx">
+      <DependentUpon>202010182043388_RequiredOnGenreId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
