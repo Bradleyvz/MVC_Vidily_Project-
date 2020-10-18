@@ -24,7 +24,7 @@ else
             @foreach (var customer in Model)
             {
                 <tr>
-                    <td>@Html.ActionLink(customer.CustomerName, "Details", "Customer", new { id = customer.Id }, null)</td>
+                    <td>@Html.ActionLink(customer.CustomerName, "Edit","Customer", new { id = customer.Id }, null)</td>
                     <!--Added The MembershipType Column to the View -->
                     <td>@customer.MembershipType.MembershipTypeName</td>
                 </tr>
