@@ -7,27 +7,31 @@
 
 <h2>Movies</h2>
 
+<p>
+    @Html.ActionLink("New Movie", "NewMovie", "Movies", null, new { @class="btn btn-primary"})
+</p>
 @if (!Model.Any())
 {
     <p>We dont have any movies yet.</p>
 }
 else
 {
-<table class="table table-bordered table-hover">
-    <thead>
-        <tr>
-            <td>Movie</td>
-            <td>Genre</td>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var movie in Model)
-        {
+    <table class="table table-bordered table-hover">
+        <thead>
             <tr>
-                <td>@Html.ActionLink(movie.Name, "Details", "Movies", new { id = movie.Id }, null)</td>
-                <td>@movie.Genre.Name</td>
+                <td>Movie</td>
+                <td>Genre</td>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var movie in Model)
+            {
+                <tr>
+      
+                    <td>@Html.ActionLink(movie.Name,"Edit","Movies",new { id = movie.Id },null)</td>
+                    <td>@movie.Genre.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }

@@ -12,6 +12,8 @@ using System.Web.UI.WebControls;
 using System.Data.Entity;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.Ajax.Utilities;
+using System.Web.Razor;
+
 
 namespace MVC_Vidily.Controllers
 {
@@ -49,6 +51,57 @@ namespace MVC_Vidily.Controllers
 
             return View();
         }
+
+        public ViewResult NewMovie()
+        {
+            
+            var genre = _context.Genres.ToList();
+            var viewModel = new MovieFormViewModel
+            {
+             Genres=genre
+            };
+
+            return View("MovieForm",viewModel);
+        }
+        //Edit Action Not Working 
+        public ActionResult Edit(int id)
+        {
+            var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
+
+            if (movie == null)
+                return HttpNotFound();
+
+            var viewModel = new MovieFormViewModel
+            {
+                Movie = movie,
+                Genres = _context.Genres.ToList()
+            };
+            return View("MovieForm", viewModel);
+        }
+        [HttpPost]
+        public ActionResult Save(Movie movie)
+        {
+            if (movie.Id==0)
+            {
+                movie.DateAdded = DateTime.Now;
+                _context.Movies.Add(movie);
+            }
+            else
+            {
+                var MoviesInDb = _context.Movies.Single(m => m.Id == movie.Id);
+                MoviesInDb.Name = movie.Name;
+                MoviesInDb.ReleaseDate = movie.ReleaseDate;
+                MoviesInDb.GenreId = movie.GenreId;
+                MoviesInDb.NumInStock = movie.NumInStock;
+              
+            }
+
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Movies");
+         
+
+        }
+
     }
 }
 
