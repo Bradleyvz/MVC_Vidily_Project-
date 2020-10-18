@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class RecreateDb : DbMigration
+    public partial class CreateDb : DbMigration
     {
         public override void Up()
         {
@@ -25,11 +25,20 @@
                 "dbo.MembershipTypes",
                 c => new
                     {
-                        Id = c.Byte(nullable: false),
+                        Id = c.Byte(nullable: false, identity: true),
                         SignUpFee = c.Short(nullable: false),
                         DurationInMonths = c.Byte(nullable: false),
                         MembershipTypeName = c.String(),
                         DiscountRate = c.Byte(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Genres",
+                c => new
+                    {
+                        Id = c.Byte(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 255),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -39,8 +48,14 @@
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
+                        GenreId = c.Byte(nullable: false),
+                        DateAdded = c.DateTime(nullable: false, storeType: "date"),
+                        ReleaseDate = c.DateTime(nullable: false, storeType: "date"),
+                        NumInStock = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Genres", t => t.GenreId, cascadeDelete: true)
+                .Index(t => t.GenreId);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -118,6 +133,7 @@
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.Movies", "GenreId", "dbo.Genres");
             DropForeignKey("dbo.Customers", "MembershipTypeID", "dbo.MembershipTypes");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
@@ -125,6 +141,7 @@
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.Movies", new[] { "GenreId" });
             DropIndex("dbo.Customers", new[] { "MembershipTypeID" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
@@ -132,6 +149,7 @@
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.Movies");
+            DropTable("dbo.Genres");
             DropTable("dbo.MembershipTypes");
             DropTable("dbo.Customers");
         }
