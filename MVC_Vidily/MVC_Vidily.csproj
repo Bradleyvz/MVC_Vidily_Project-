@@ -189,6 +189,18 @@
     <Compile Include="Migrations\202010181958079_AddGenreIdForeignKey.designer.cs">
       <DependentUpon>202010181958079_AddGenreIdForeignKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010182023026_RemoveRequiredFromMovieModel.cs" />
+    <Compile Include="Migrations\202010182023026_RemoveRequiredFromMovieModel.designer.cs">
+      <DependentUpon>202010182023026_RemoveRequiredFromMovieModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010182029147_MovieModelRequiredFix.cs" />
+    <Compile Include="Migrations\202010182029147_MovieModelRequiredFix.designer.cs">
+      <DependentUpon>202010182029147_MovieModelRequiredFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010182032031_RemoveGenreRequiredNotation.cs" />
+    <Compile Include="Migrations\202010182032031_RemoveGenreRequiredNotation.designer.cs">
+      <DependentUpon>202010182032031_RemoveGenreRequiredNotation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -299,6 +311,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010181958079_AddGenreIdForeignKey.resx">
       <DependentUpon>202010181958079_AddGenreIdForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010182023026_RemoveRequiredFromMovieModel.resx">
+      <DependentUpon>202010182023026_RemoveRequiredFromMovieModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010182029147_MovieModelRequiredFix.resx">
+      <DependentUpon>202010182029147_MovieModelRequiredFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010182032031_RemoveGenreRequiredNotation.resx">
+      <DependentUpon>202010182032031_RemoveGenreRequiredNotation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

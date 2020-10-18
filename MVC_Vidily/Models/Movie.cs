@@ -16,27 +16,29 @@ namespace MVC_Vidily.Models
         public int Id { get; set; }
 
         [Required]
+        [StringLength(255)]
         public string Name { get; set; }
 
+        //[Required]
         [Display(Name="Genre")]
-        [Required]
-        [ForeignKey("GenreId")]
+   
         public Genre Genre { get; set; }//Navigation Property to Movies to Genre Table 
         public byte GenreId { get; set; }//Foreign Key
 
+
         [Column(TypeName = "Date")]// Change DateTime type to Date.
         [Display(Name = "Date Added")]
-        [Required]
+    
         public DateTime DateAdded { get; set; }
 
 
         [Column(TypeName = "Date")]// Change DateTime type to Date.
         [Display(Name = "Date Released")]
-        [Required]
+  
         public DateTime ReleaseDate { get; set; }
 
         [Display(Name="Number In Stock")]
-        [Required]
+     
         public byte NumInStock { get; set; }
     }
 }
