@@ -15,6 +15,7 @@ namespace MVC_Vidily.Models
         public byte DurationInMonths { get; set; }
 
         //Section 3 Exercise 1 
+        
         public string MembershipTypeName { get; set; }
 
         public byte DiscountRate { get; set; }

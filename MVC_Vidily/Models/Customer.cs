@@ -25,6 +25,8 @@ namespace MVC_Vidily.Models
         public DateTime?  Birthdate  { get; set; }
 
         public MembershipType MembershipType { get; set; }//Navigation property , navigation from one type to another , Customer 
+
+        [Display(Name ="Membership Type")]
         public byte MembershipTypeID { get; set; }//Treats this property as a foreign key 
     }
 }

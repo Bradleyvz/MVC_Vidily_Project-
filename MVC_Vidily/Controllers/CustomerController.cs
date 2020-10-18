@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.Mvc;
 //Add Using Statement 
 using System.Data.Entity;
+using MVC_Vidily.ViewModel;
+using Microsoft.Owin.Security.Provider;
 
 namespace MVC_Vidily.Controllers
 {
@@ -44,6 +46,16 @@ namespace MVC_Vidily.Controllers
 
             return View(customer);
 
+        }
+        public ActionResult New()
+        {
+            var membershipTypes = _context.MembershipTypes.ToList();
+            var viewModel = new NewCustomerViewModel
+            {
+                MembershipTypes = membershipTypes
+
+            };
+            return View(viewModel);
         }
     }
 }
