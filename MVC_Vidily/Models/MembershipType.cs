@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.SessionState;
 
 namespace MVC_Vidily.Models
 {
@@ -19,5 +20,9 @@ namespace MVC_Vidily.Models
         public string MembershipTypeName { get; set; }
 
         public byte DiscountRate { get; set; }
+
+        public static readonly byte Unknown = 0;
+        public static readonly byte PayAsYouGo = 1;
+
     }
 }

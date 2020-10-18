@@ -22,6 +22,7 @@ namespace MVC_Vidily.Models
         //Section 3 Exercise 2 
 
         [Column(TypeName = "Date")]// Change DateTime type to Date.
+        [Min18YearsIfAMember]
         public DateTime?  Birthdate  { get; set; }
 
         public MembershipType MembershipType { get; set; }//Navigation property , navigation from one type to another , Customer 
