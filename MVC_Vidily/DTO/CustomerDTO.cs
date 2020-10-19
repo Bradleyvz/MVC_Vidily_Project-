@@ -22,7 +22,7 @@ namespace MVC_Vidily.DTO
 
         [Column(TypeName = "Date")]// Change DateTime type to Date.
 
-        [Min18YearsIfAMember]
+        //[Min18YearsIfAMember]
         public DateTime? Birthdate { get; set; }
 
         public byte MembershipTypeID { get; set; }//Treats this property as a foreign key 

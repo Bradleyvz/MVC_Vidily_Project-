@@ -15,6 +15,17 @@ namespace MVC_Vidily.App_Start
         {
             Mapper.CreateMap<Customer, CustomerDTO>();
             Mapper.CreateMap<CustomerDTO, Customer>();
+
+            //Mapper from Movie Class to MovieDTO
+            Mapper.CreateMap<Movie, MovieDTO>();
+            Mapper.CreateMap<MovieDTO, Movie>();
+            // Dto to Domain
+            Mapper.CreateMap<CustomerDTO, Customer>()
+                .ForMember(c => c.Id, opt => opt.Ignore());
+
+            Mapper.CreateMap<MovieDTO, Movie>()
+                .ForMember(c => c.Id, opt => opt.Ignore());
         }
+
     }
 }
