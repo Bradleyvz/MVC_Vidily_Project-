@@ -52,6 +52,8 @@ namespace MVC_Vidily.Controllers
             var membershipTypes = _context.MembershipTypes.ToList();
             var viewModel = new CustomerFormViewModel
             {
+                //Customer Default Values will be initialized.
+                Customer=new Customer(),
                 MembershipTypes = membershipTypes
 
             };
