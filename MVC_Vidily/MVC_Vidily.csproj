@@ -205,6 +205,10 @@
     <Compile Include="Migrations\202010182043388_RequiredOnGenreId.designer.cs">
       <DependentUpon>202010182043388_RequiredOnGenreId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010190850401_MoiveNumInStockRange1to20.cs" />
+    <Compile Include="Migrations\202010190850401_MoiveNumInStockRange1to20.designer.cs">
+      <DependentUpon>202010190850401_MoiveNumInStockRange1to20.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\DataContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -328,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010182043388_RequiredOnGenreId.resx">
       <DependentUpon>202010182043388_RequiredOnGenreId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010190850401_MoiveNumInStockRange1to20.resx">
+      <DependentUpon>202010190850401_MoiveNumInStockRange1to20.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
