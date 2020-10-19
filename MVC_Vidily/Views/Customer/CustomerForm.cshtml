@@ -32,10 +32,13 @@
             @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsletter)Subscribed to Newsletter ?
         </label>
     </div>
+    /*Hidden Id Field*/
     @Html.HiddenFor(m => m.Customer.Id)
+    @Html.AntiForgeryToken()
+
     <button type="submit" class="btn btn-primary">Save Customer</button>
 }
-Reference to the jQuery Validation Bundle
+@*Reference to the jQuery Validation Bundle*@
 @section scripts
     {
     @Scripts.Render("~/bundles/jqueryval")

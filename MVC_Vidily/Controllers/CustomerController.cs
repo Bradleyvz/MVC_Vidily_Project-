@@ -61,6 +61,7 @@ namespace MVC_Vidily.Controllers
         }
         //Post Method to post form back to the server 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
             if (!ModelState.IsValid)
