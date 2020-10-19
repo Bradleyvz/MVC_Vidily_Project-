@@ -29,9 +29,9 @@ namespace MVC_Vidily.Controllers
         {
             //Eager Loading/ Using the Include Method to load the whole customer object
             //Added Using System.Data.Entity MembershipType is in a different NameSpace 
-            var customers = _context.Customers.Include(c =>c.MembershipType).ToList();
+            //var customers = _context.Customers.Include(c =>c.MembershipType).ToList();
 
-            return View(customers);
+            return View();
         }
 
 
