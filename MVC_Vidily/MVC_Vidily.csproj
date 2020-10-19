@@ -184,6 +184,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="DTO\CustomerDTO.cs" />
     <Compile Include="Migrations\202010161904178_CreateDb.cs" />
     <Compile Include="Migrations\202010161904178_CreateDb.designer.cs">
       <DependentUpon>202010161904178_CreateDb.cs</DependentUpon>
